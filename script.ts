@@ -54,3 +54,23 @@ TS!!
 - Keszits alprogramot, ami megadja a parameterul kapott auto tombbol a benzinesek darabszamat
 - A valtoztatasokat toltsd fel a github repodba
 */
+
+function LegkisebbHengerur(autok:Auto[]){
+    var minAuto:Auto = autok[0];
+    for(var i = 1; i < autok.length; i++){
+        if(autok[i].hengerurtartalom < autok[0].hengerurtartalom){
+            minAuto = autok[i];
+        }
+    }
+    return minAuto;
+};
+
+function BenzinesDb(autok:Auto[]):number{
+    var db = 0;
+    for(var i = 0; i < autok.length; i++){
+        if(autok[i].benzinesE == true){
+            db++
+        }
+    }
+    return db;
+};
